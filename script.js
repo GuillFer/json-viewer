@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const fileBtn = document.querySelector('input[type="file"]');
+  const uploadBtn = document.getElementById('upload-json');
+
+  fileBtn.addEventListener('change', () => {
+    uploadBtn.removeAttribute('disabled');
+  });
 
   // Upload & read
-  const uploadBtn = document.getElementById('upload-json');
   uploadBtn.addEventListener('click', async () => {
     const file = document.querySelector('input[type=file]').files[0];
     if (!file) {
