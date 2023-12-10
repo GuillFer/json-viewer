@@ -37,7 +37,7 @@ function readJSON(file) {
         resolve(json);
       } catch (err) {
         alert("File is not a valid JSON");
-        console.log(err);
+        console.warn(err);
       }
     });
   });
