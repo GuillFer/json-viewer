@@ -32,8 +32,13 @@ function readJSON(file) {
     if (file) jsonReader.readAsText(file);
     jsonReader.addEventListener('load', () => {
       const data = jsonReader.result;
-      const json = JSON.parse(data);
-      resolve(json);
+      try {
+        const json = JSON.parse(data);
+        resolve(json);
+      } catch (err) {
+        alert("File is not a valid JSON");
+        console.log(err);
+      }
     });
   });
 }
